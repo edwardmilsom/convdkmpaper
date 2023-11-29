@@ -1,0 +1,37 @@
+dataset: MNIST
+dtype: float64
+dof: inf
+init_lr: 0.01
+seed: 3
+bn_indnorm: global
+bn_tnorm: global
+bn_indscale: global
+bn_tscale: global
+final_layer: GAP
+likelihood: categorical
+n_ind_scale: 8
+x_ind shape: torch.Size([128, 1, 3, 3])
+Inducing inputs learned: True
+Model in CUDA: True
+('Epoch 0', 'Objective: -2.035276001395171', 'Train Acc: 0.2769333333333333', 'Test Acc: 0.3755', 'Train LL: -1.9723280283022322', 'Test LL: -1.7877358666299603', 'Epoch Time (s): 110.33386810985394')
+('Epoch 1', 'Objective: -1.6483840987060059', 'Train Acc: 0.475', 'Test Acc: 0.3873', 'Train LL: -1.508365222410996', 'Test LL: -1.6281072744508138', 'Epoch Time (s): 110.40390930511057')
+('Epoch 2', 'Objective: -1.4690929326123083', 'Train Acc: 0.5702166666666667', 'Test Acc: 0.6543', 'Train LL: -1.2718128562690476', 'Test LL: -1.1313110076604513', 'Epoch Time (s): 110.53431432205252')
+('Epoch 3', 'Objective: -1.347286269688635', 'Train Acc: 0.6319666666666667', 'Test Acc: 0.5651', 'Train LL: -1.1155804131496674', 'Test LL: -1.2893885105529408', 'Epoch Time (s): 110.38710513198748')
+Traceback (most recent call last):
+  File "/user/home/em17331/october_2023/hyperparams_mnist/../18layer.py", line 227, in <module>
+    train_preds = torch.argmax(dkm.categorical_prediction(pred).probs, dim=1)
+  File "/user/home/em17331/october_2023/dkm/dkm/output.py", line 55, in categorical_prediction
+    return Categorical(t.exp(averaged_log_prob))
+  File "/user/home/em17331/anaconda3/envs/dkm/lib/python3.9/site-packages/torch/distributions/categorical.py", line 64, in __init__
+    super(Categorical, self).__init__(batch_shape, validate_args=validate_args)
+  File "/user/home/em17331/anaconda3/envs/dkm/lib/python3.9/site-packages/torch/distributions/distribution.py", line 55, in __init__
+    raise ValueError(
+ValueError: Expected parameter probs (Tensor of shape (256, 10)) of distribution Categorical(probs: torch.Size([256, 10])) to satisfy the constraint Simplex(), but found invalid values:
+tensor([[nan, nan, nan,  ..., nan, nan, nan],
+        [nan, nan, nan,  ..., nan, nan, nan],
+        [nan, nan, nan,  ..., nan, nan, nan],
+        ...,
+        [nan, nan, nan,  ..., nan, nan, nan],
+        [nan, nan, nan,  ..., nan, nan, nan],
+        [nan, nan, nan,  ..., nan, nan, nan]], device='cuda:0',
+       grad_fn=<DivBackward0>)
