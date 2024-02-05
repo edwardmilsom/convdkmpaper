@@ -1,5 +1,5 @@
 # Convolutional Deep Kernel Machines
-This repository contains code for the paper "Convolutional Deep Kernel Machines" [insert_URL_here].
+This repository contains code for the paper "Convolutional Deep Kernel Machines" ([https://arxiv.org/abs/2309.09814]) published at ICLR 2024.
 
 A `convdkm.yml` file is included to replicate our conda environment. 
 
