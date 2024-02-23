@@ -3,7 +3,7 @@ This repository contains code for the paper "Convolutional Deep Kernel Machines"
 
 A `convdkm.yml` file is included to replicate our conda environment. 
 
-Included in each `benchmark...` and `hyperparams...` folder are bash scripts to run the exact experiments from the paper. We recommend modifying these for submission on a GPU cluster.
+Included in each `benchmark...` and `hyperparams...` folder are bash scripts to run the exact experiments from the paper. We recommend modifying these for submission on a GPU cluster. Total GPU time will be measured in the order of weeks using A100 GPUs. The largest experiments (the `512/1024/2048 inducing point` version) may require an 80GB A100.
 
 Also included are the raw outputs from those runs that constituted the results in the paper (see `runs` subfolders).
 
